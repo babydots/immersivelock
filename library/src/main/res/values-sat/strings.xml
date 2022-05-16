@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="touch_lock_to_unlock">
+        <item quantity="one">ᱡᱟᱹᱥᱛᱤ ᱥᱚᱢᱚᱭ ᱦᱟᱹᱵᱤᱡ ᱛᱮ ᱠᱷᱭᱞᱟᱹ ᱫᱚᱦᱚ ᱞᱟᱹᱜᱤᱹᱫ %d ᱠᱩᱞᱩᱯ ᱨᱮ ᱞᱚᱜᱚᱱ ᱚᱛᱟᱭ ᱢᱮ ᱾</item>
+        <item quantity="other">ᱡᱟᱹᱥᱛᱤ ᱥᱚᱢᱚᱭ ᱦᱟᱹᱵᱤᱡ ᱛᱮ ᱠᱷᱩᱞᱟᱹ ᱫᱚᱦᱚ ᱞᱟᱹᱜᱤᱹᱫ %d ᱠᱩᱞᱩᱯ ᱨᱮ ᱞᱚᱜᱚᱱ ᱚᱛᱟᱭ ᱢᱮ ᱾</item>
+    </plurals>
+    <string name="touch_to_unlock">ᱠᱩᱞᱩᱯ ᱠᱷᱩᱞᱟᱹ ᱨᱮ ᱚᱛᱟᱭ ᱢᱮ</string>
+    <string name="lock">ᱠᱩᱞᱩᱯ</string>
+    <string name="screen_unlocked">ᱥᱠᱨᱤᱻᱱ ᱠᱷᱩᱞᱟᱹᱭᱮᱱᱟ</string>
+</resources>

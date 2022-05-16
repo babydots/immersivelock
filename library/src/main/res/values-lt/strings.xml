@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="touch_lock_to_unlock">
+        <item quantity="one">Greitai palieskite užraktą dar %d kartą, kad atrakintumėte.</item>
+        <item quantity="few">Greitai palieskite užraktą dar %d kartus, kad atrakintumėte.</item>
+        <item quantity="many">Greitai palieskite užraktą dar %d kartų, kad atrakintumėte.</item>
+        <item quantity="other">Greitai palieskite užraktą dar %d kartų, kad atrakintumėte.</item>
+    </plurals>
+    <string name="touch_to_unlock">Palieskite, kad atrakintumėte</string>
+    <string name="lock">Užrakinti</string>
+    <string name="screen_unlocked">Ekranas atrakintas</string>
+</resources>

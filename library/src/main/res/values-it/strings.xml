@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="touch_lock_to_unlock">
+        <item quantity="one">Sfiora rapidamente la serratura %d altra volta per sbloccare.</item>
+        <item quantity="other">Sfiora rapidamente la serratura altre %d volte per sbloccare.</item>
+    </plurals>
+    <string name="touch_to_unlock">Tocca per sbloccare</string>
+    <string name="lock">Blocca</string>
+    <string name="screen_unlocked">Schermo sbloccato</string>
+</resources>

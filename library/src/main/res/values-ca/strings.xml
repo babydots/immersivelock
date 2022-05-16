@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_unlocked">Pantalla desbloquejada</string>
+    <string name="lock">Blocar</string>
+    <string name="touch_to_unlock">Tocar per a desbloquejar</string>
+    <plurals name="touch_lock_to_unlock">
+        <item quantity="one">Tocar ràpidament el candau %d vegada més per desblocar-lo.</item>
+        <item quantity="other">Tocar ràpidament el candau %d vegades més per desblocar-lo.</item>
+    </plurals>
+</resources>

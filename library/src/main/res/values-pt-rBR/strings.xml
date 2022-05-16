@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="touch_lock_to_unlock">
+        <item quantity="one">Toque rapidamente na trava mais %d vez para desbloquear.</item>
+        <item quantity="other">Toque rapidamente na trava mais %d vezes para desbloquear.</item>
+    </plurals>
+    <string name="touch_to_unlock">Toque para desbloquear</string>
+    <string name="lock">Trancar</string>
+    <string name="screen_unlocked">Tela desbloqueada</string>
+</resources>

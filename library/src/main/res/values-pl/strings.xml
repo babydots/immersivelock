@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="touch_lock_to_unlock">
+        <item quantity="one">Szybko dotknij blokadę %d więcej czasu na odblokowanie.</item>
+        <item quantity="few">Szybko dotknij blokady %d więcej czasu na odblokowanie.</item>
+        <item quantity="many">Szybko dotknij blokad %d więcej czasu na odblokowanie.</item>
+        <item quantity="other">Szybko dotknij blokad %d więcej czasu na odblokowanie.</item>
+    </plurals>
+    <string name="touch_to_unlock">Dotknij, aby odblokować</string>
+    <string name="lock">Zablokuj</string>
+    <string name="screen_unlocked">Ekran odblokowany</string>
+</resources>

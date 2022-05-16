@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="touch_lock_to_unlock">
+        <item quantity="one">Za otključavanje, brzo dodirni lokot još %d puta.</item>
+        <item quantity="few">Za otključavanje, brzo dodirni lokot još %d puta.</item>
+        <item quantity="other">Za otključavanje, brzo dodirni lokot još %d puta.</item>
+    </plurals>
+    <string name="touch_to_unlock">Dodirni za otključavanje</string>
+    <string name="lock">Zaključaj</string>
+    <string name="screen_unlocked">Ekran je otključan</string>
+</resources>
