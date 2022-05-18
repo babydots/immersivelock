@@ -20,6 +20,7 @@ class ImmersiveLock(
 ) {
 
    private var inImmersiveMode: Boolean = false
+   private var previousSystemUiVisibility: Int = 0
 
    companion object {
 
@@ -98,6 +99,7 @@ class ImmersiveLock(
    fun startImmersiveMode(activity: Activity) {
 
       inImmersiveMode = true
+      previousSystemUiVisibility = activity.window.decorView.systemUiVisibility
 
       try {
          @Suppress("DEPRECATION") // The recommended alternative was only introduced in API 30.
@@ -215,7 +217,8 @@ class ImmersiveLock(
 
       try {
          @Suppress("DEPRECATION") // The recommended alternative was only introduced in API 30.
-         activity.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+         activity.window.decorView.systemUiVisibility = previousSystemUiVisibility
+         previousSystemUiVisibility = 0
       } catch (e: Exception) {}
 
       Toast.makeText(activity, activity.getString(unlockedMessageStringRes), Toast.LENGTH_SHORT).show()
