@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo
 import android.graphics.Point
 import android.view.Surface
 import android.view.View
+import android.view.WindowInsetsController
 import android.widget.Toast
 import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
@@ -105,7 +106,7 @@ class ImmersiveLock(
          @Suppress("DEPRECATION") // The recommended alternative was only introduced in API 30.
          activity.window.decorView.systemUiVisibility =
             View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-      } catch (e: Exception) {}
+      } catch (ignored: Exception) {}
 
       lockActivityOrientation(activity)
 
@@ -219,7 +220,7 @@ class ImmersiveLock(
          @Suppress("DEPRECATION") // The recommended alternative was only introduced in API 30.
          activity.window.decorView.systemUiVisibility = previousSystemUiVisibility
          previousSystemUiVisibility = 0
-      } catch (e: Exception) {}
+      } catch (ignored: Exception) {}
 
       Toast.makeText(activity, activity.getString(unlockedMessageStringRes), Toast.LENGTH_SHORT).show()
 

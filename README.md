@@ -14,38 +14,107 @@ times in succession.
 
 ## Usage
 
+### Add dependency to Gradle
+
 See https://jitpack.io/#babydots/immersivelock/ for adding the Gradle dependency.
 
+### Add a UI element for unlocking
+
+The UI element added will need to be tapped `touchesRequiredToUnlock` times in quick succession
+to unlock the screen. It could be a simple `TextView`, or something more complex like this:
+
+```xml
+<LinearLayout
+    android:id="@+id/unlock_wrapper"
+    android:visibility="gone"
+    tools:visibility="visible"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:background="@color/transparent_back"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:layout_marginEnd="16dp"
+    android:gravity="center"
+    android:layout_marginBottom="16dp">
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_lock"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/touch_to_unlock"
+        android:textSize="16sp"
+        android:layout_marginStart="8dp"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
+```
+
+You may find it helpful to use the `@string/touch_to_unlock` string from this library in your
+`TextView` to make use of the translations here.
+
+### Configure the lock
+
+Create the lock, providing the Android `View` object from the previous step that will be set
+to `View.VISIBLE` when entering immersive mode. The user will need to tap this several times
+to leave immersive mode.
+
 ```kotlin
-    // Create the lock, providing an Android View object that will be set to View.VISIBLE
-    // when entering immersive mode. The user will need to tap this several times to leave
-    // immersive mode.
-    val immersiveLock = ImmersiveLock.Builder(viewUserNeedsToTapToUnlock)
+val immersiveLock = ImmersiveLock.Builder(viewUserNeedsToTapToUnlock)
 
-        // Perform actions when leaving immersive load. Note there is no callback for when you
-        // *enter* immersive mode, because you are responsible for calling the "startImmersiveMode()"
-        // function, and at that point you can perform whatever actions you see fit.
-        .onStopImmersiveMode { supportActionBar?.show() }
+    // Perform actions when leaving immersive load. Note there is no callback for when you
+    // *enter* immersive mode, because you are responsible for calling the "startImmersiveMode()"
+    // function, and at that point you can perform whatever actions you see fit.
+    .onStopImmersiveMode {
+        // Without this delay, the showing of the action bar trips over the showing of
+        // the status bar, and results in it showing behind the status bar. I discovered
+        // this while reading through the show() code for the support action bar which
+        // had a hard coded delay of 250ms before starting an animation for showing the
+        // action bar, specifically due to the fact it wants to wait for the status bar
+        // to do its thing first.
+        delay(300)
+        supportActionBar?.show()
+    }
 
-        // Defaults to ImmersiveLock.DEFAULT_TIME_BETWEEN_TOUCHES (750ms)
-        .maxTimeBetweenTouches(750L)
+    // Optional: Defaults to ImmersiveLock.DEFAULT_TIME_BETWEEN_TOUCHES (750ms)
+    .maxTimeBetweenTouches(750L)
 
-        // Defaults to DEFAULT_TOUCHES_REQUIRED_TO_UNLOCK (5)
-        .touchesRequiredToUnlock(5)
+    // Optional: Defaults to ImmersiveLock.DEFAULT_TOUCHES_REQUIRED_TO_UNLOCK (5)
+    .touchesRequiredToUnlock(5)
 
-        // Defaults to the "screen_unlocked" resource provided with this library, and translated
-        // by the wonderful community of translators to the BabyDots android app.
-        .unlockedMessageStringRes(R.string.screen_unlocked)
+    // Optional: Defaults to the "screen_unlocked" resource provided with this library, and
+    // translated by the wonderful community of translators to the BabyDots android app.
+    .unlockedMessageStringRes(R.string.screen_unlocked)
 
-        // Defaults to the "touch_lock_to_unlock" resource provided with this library, and translated
-        // by the wonderful community of translators to the BabyDots android app.
-        .touchLockToUnlockedMessagePluralRes(R.plurals.touch_lock_to_unlock)
+    // Optional: Defaults to the "touch_lock_to_unlock" resource provided with this library, and
+    // translated by the wonderful community of translators to the BabyDots android app.
+    .touchLockToUnlockedMessagePluralRes(R.plurals.touch_lock_to_unlock)
 
-        .build()
+    .build()
+```
 
-    // At some point, enter immersive mode (e.g. in response to tapping a menu item from the ActionBar):
-    immersiveLock.startImmersiveMode(this)
-    supportActionBar?.hide()
+### Initiate the lock
+
+Likely you will want this to happen from a `Toolbar` which contains a lock icon with
+the `@string/lock` title, for example:
+
+```kotlin
+override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+        R.id.menu_lock -> {
+            immersiveLock.startImmersiveMode(this)
+            speedDial.visibility = View.GONE
+            toolbar.visibility = View.GONE
+        }
+    }
+    return false
+}
 ```
 
 ## Contributing
