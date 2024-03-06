@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="lock">锁定</string>
+    <string name="touch_to_unlock">点击解锁</string>
+    <string name="screen_unlocked">屏幕已解锁</string>
+    <plurals name="touch_lock_to_unlock">
+        <item quantity="other">再快速点击锁定按钮 %d 次以解锁。</item>
+    </plurals>
+</resources>
