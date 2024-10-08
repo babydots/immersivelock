@@ -2,6 +2,7 @@
 <resources>
     <plurals name="touch_lock_to_unlock">
         <item quantity="one">Toca rápidamente la cerradura %d vez más para desbloquear.</item>
+        <item quantity="many">Toca rápidamente la cerradura %d veces más para desbloquear.</item>
         <item quantity="other">Toca rápidamente la cerradura %d veces más para desbloquear.</item>
     </plurals>
     <string name="touch_to_unlock">Toca para desbloquear</string>
