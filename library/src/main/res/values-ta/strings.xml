@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="screen_unlocked">திரை திறக்கப்பட்டது</string>
+    <string name="lock">பூட்டு</string>
+    <string name="touch_to_unlock">திறக்கத் தொடவும்</string>
+    <plurals name="touch_lock_to_unlock">
+        <item quantity="one">திறக்க %d ஐ விரைவாகத் தொடுவதற்கு அதிக நேரம் தொடவும்.</item>
+        <item quantity="other">திறக்க %d ஐ விரைவாகத் தொடவும்.</item>
+    </plurals>
+</resources>
