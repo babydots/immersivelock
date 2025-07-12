@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <plurals name="touch_lock_to_unlock">
-        <item quantity="one">Açmak için kilide %d defa daha hızlıca dokunun.</item>
-        <item quantity="other">Açmak için kilide %d defa daha hızlıca dokunun.</item>
+        <item quantity="one">Kilidi açmak için kilide %d kez daha hızlıca dokunun.</item>
+        <item quantity="other">Kilidi açmak için kilide %d kez daha hızlıca dokunun.</item>
     </plurals>
     <string name="touch_to_unlock">Kilidi açmak için dokunun</string>
     <string name="lock">Kilitle</string>
