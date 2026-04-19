@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="screen_unlocked">Layar terbuka</string>
+    <string name="lock">Kunci</string>
+    <string name="touch_to_unlock">Sentuh untuk membuka kunci</string>
+    <plurals name="touch_lock_to_unlock">
+        <item quantity="other">Sentuh kunci %d kali lagi dengan cepat untuk membuka kunci.</item>
+    </plurals>
 </resources>
